@@ -1,0 +1,44 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+mainClassName = 'com.thedevpiece.mss.Application'
+
+distTar {
+    archiveName = 'user-management.tar'
+}
+
+sourceSets {
+    main {
+        output.resourcesDir = "build/classes/main"
+    }
+}
+
+dependencies {
+    compile 'io.undertow:undertow-core:1.2.9.Final'
+    compile 'io.undertow:undertow-servlet:1.2.9.Final'
+
+    compile 'org.glassfish.jersey.core:jersey-server:2.21'
+    compile 'org.glassfish.jersey.ext.cdi:jersey-cdi1x:2.21'
+    compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.21'
+    compile 'org.glassfish.jersey.containers:jersey-container-servlet-core:2.21'
+    compile 'org.glassfish.jersey.ext:jersey-bean-validation:2.21'
+
+    compile 'org.jboss.weld:weld-core:2.2.14.Final'
+    compile group: 'org.jboss.weld.servlet', name: 'weld-servlet-core', version: '2.2.14.Final'
+
+    compile 'com.fasterxml.jackson.core:jackson-core:2.6.1'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.1'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.1'
+
+    compile 'org.mongodb.morphia:morphia:1.0.1'
+
+    testCompile "junit:junit:4.11"
+}
+
