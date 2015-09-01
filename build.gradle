@@ -11,7 +11,7 @@ repositories {
 mainClassName = 'com.thedevpiece.mss.Application'
 
 distTar {
-    archiveName = 'user-management.tar'
+    archiveName = 'mss.tar'
 }
 
 sourceSets {
